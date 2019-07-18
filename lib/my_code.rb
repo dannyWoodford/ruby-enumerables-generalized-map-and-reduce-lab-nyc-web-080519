@@ -11,16 +11,20 @@ end
 
 
 
-def reduce(source_array, starting_point=0) 
+def reduce(source_array, starting_point=nil) 
   #{|memo, n| memo + n}
   #{|memo, n| memo && n}
   #{|memo, n| memo || n}
-  i = 0
-  total= starting_point
+  if starting_point 
+    i = 0
+    total = starting_point
+  else 
+    total = source_array[0]
+    i = 1
+  end
   while i < source_array.length do
     total = yield(total, source_array[i])
     i += 1
   end
   return total 
-    
 end
