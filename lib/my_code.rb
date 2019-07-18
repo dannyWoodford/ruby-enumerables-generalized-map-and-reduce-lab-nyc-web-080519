@@ -21,6 +21,6 @@ def reduce(source_array, starting_point=0)
     total = yield(total, source_array[i])
     i += 1
   end
-  return total unless
+  return total 
     
 end
